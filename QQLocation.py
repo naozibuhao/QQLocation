@@ -23,6 +23,7 @@ except:
     print u'[>]没有安装geoip2,需要安装geoip2'
 systemos = ''
 # 判断当前系统
+# 其实这里也没用 ,先写上后期可能会用上
 def UsePlatform():
     global systemos
     sysstr = platform.system()
@@ -36,7 +37,8 @@ def UsePlatform():
       
 UsePlatform()
 
-# 清理屏幕
+# 清理屏幕 
+# 这里用不上, 清理掉屏幕以后 历史消息就没有了
 def clearScr():
     global systemos
     if systemos == 'Windows':
@@ -45,7 +47,7 @@ def clearScr():
         cal = 'clear'
     os.system(cal)
 
-
+#
 def PacketHandler(pkt) :
     try:
         if pkt.len==100:
