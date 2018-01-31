@@ -80,16 +80,19 @@ def getGps(ip):
 
 def Menu():
     #clearScr() // 这里如果清理了 历史消息就看不到了
-    print u'}----------------secquanQQLocation----------------------{'
-    print u'[+] 1. 开始'  
+    print u'}----------------SecQuanQQLocation----------------------{'
+    print u'[+]  1. 开始'  
+    print u'[+]  2. 清理屏幕'  
     print u'[+] 99. 退出' 
-    input = raw_input('secquanQQLocation~# ')
+    print '\n'*5
+    input = raw_input('SecQuan > ')
     #input = raw_input(unicode('请输入编号:','utf-8').encode('gbk'))
     if input == '1':
         runGo()
     elif input == '99':
-            sys.exit()
+        sys.exit()
     else:
+        clearScr()
         Menu()
         
 def quit(signum, frame):  
@@ -114,6 +117,7 @@ def runGo():
     print u'已停止监听'
 # 其实没啥用 就是为了让他输入一次 好知道可以开始了
 enter = raw_input (unicode('模块加载完毕,输入任意键继续:','utf-8').encode('gbk'))
+clearScr() # 进入系统清理一次屏幕
 UsePlatform()
 Menu()
 #runGo()
